@@ -4,6 +4,8 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import Weather from './Components/Weather/Weather';
 
+import {URL} from './config'
+
 function App() {
 
   let location = useLocation();
@@ -11,7 +13,7 @@ function App() {
 
   useEffect(() => {
     const fetchProvinces = async () => {
-      let {data} = await axios.get('http://localhost:3001/WeatherApp/province')
+      let {data} = await axios.get(`${URL}province`)
       setProvincias(data)
 
     }
